@@ -1,0 +1,196 @@
+/* 自定义样式 */
+
+/* 自定义主题色彩 - 深青色主题 */
+:root {
+  --md-primary-fg-color: rgb(42, 103, 105);
+  --md-primary-fg-color--light: rgba(42, 103, 105, 0.8);
+  --md-primary-fg-color--dark: rgba(42, 103, 105, 1);
+  --md-accent-fg-color: rgb(42, 103, 105);
+  --md-accent-fg-color--transparent: rgba(42, 103, 105, 0.1);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: rgb(52, 123, 125);
+  --md-primary-fg-color--light: rgba(52, 123, 125, 0.8);
+  --md-primary-fg-color--dark: rgba(52, 123, 125, 1);
+  --md-accent-fg-color: rgb(52, 123, 125);
+  --md-accent-fg-color--transparent: rgba(52, 123, 125, 0.1);
+}
+
+/* 代码块样式优化 */
+.highlight pre {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 自定义警告框样式 */
+.md-typeset .admonition.tip {
+  border-left: 4px solid #00c853;
+}
+
+.md-typeset .admonition.warning {
+  border-left: 4px solid #ff9800;
+}
+
+.md-typeset .admonition.danger {
+  border-left: 4px solid #f44336;
+}
+
+.md-typeset .admonition.info {
+  border-left: 4px solid #2196f3;
+}
+
+/* 表格样式优化 */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  font-weight: 600;
+}
+
+/* 导航栏样式 */
+.md-header {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 侧边栏样式 */
+.md-sidebar {
+  border-right: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* 内容区域样式 */
+.md-content {
+  max-width: 1200px;
+}
+
+/* 代码行号样式 */
+.highlight .linenos {
+  background-color: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light);
+  padding-right: 1em;
+  border-right: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* 自定义按钮样式 */
+.md-button {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.md-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 标签样式 */
+.md-typeset .md-tag {
+  background-color: var(--md-accent-fg-color);
+  color: white;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+/* 响应式设计优化 */
+@media screen and (max-width: 768px) {
+  .md-content {
+    padding: 1rem;
+  }
+  
+  .md-typeset h1 {
+    font-size: 1.8em;
+  }
+  
+  .md-typeset h2 {
+    font-size: 1.5em;
+  }
+}
+
+/* 深色模式优化 */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #ff8a9b;
+  --md-primary-fg-color--light: #ffb3c1;
+  --md-primary-fg-color--dark: #ff6b9d;
+  --md-accent-fg-color: #81c784;
+  --md-accent-fg-color--transparent: rgba(129, 199, 132, 0.1);
+  
+  /* 深色模式渐变 */
+  --gradient-primary: linear-gradient(135deg, 
+    #ff8a9b 0%,
+    #7bb3f0 25%,
+    #5ba3f5 50%,
+    #c77dcc 75%,
+    #90c695 100%
+  );
+  
+  --md-code-bg-color: #2d3748;
+  --md-code-fg-color: #e2e8f0;
+}
+
+[data-md-color-scheme="slate"] .highlight pre {
+  background-color: var(--md-code-bg-color);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--md-default-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-default-fg-color--lighter);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-default-fg-color--light);
+}
+
+/* 动画效果 */
+.md-typeset .admonition {
+  transition: transform 0.2s ease;
+}
+
+.md-typeset .admonition:hover {
+  transform: translateY(-2px);
+}
+
+/* 首页特殊样式 */
+.homepage-hero {
+  text-align: center;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, var(--md-primary-fg-color--light), var(--md-primary-fg-color));
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.homepage-hero h1 {
+  color: white !important;
+  margin-bottom: 1rem;
+}
+
+/* 特色卡片样式 */
+.feature-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
