@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://yourdomain.com/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/about/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/about/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/about/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/about/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/database/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/database/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/database/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/database/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/database/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/database/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/javascript/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/javascript/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/javascript/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/javascript/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/javascript/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/javascript/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/python/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/python/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/python/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/python/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/python/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/python/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/tools/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/tools/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/tools/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/tools/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/tools/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/en/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/en/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/en/about/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/en/about/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/about/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/about/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/en/database/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/en/database/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/database/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/database/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/database/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/database/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/en/javascript/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/en/javascript/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/javascript/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/javascript/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/javascript/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/javascript/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/en/python/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/en/python/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/python/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/python/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/python/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/python/"/>
     </url>
     <url>
-        <loc>https://yourdomain.com/en/tools/</loc>
-        <lastmod>2025-10-06</lastmod>
+        <loc>https://navi-nanxiqi.github.io/tech-blog/en/tools/</loc>
+        <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yourdomain.com/en/tools/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://yourdomain.com/tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://navi-nanxiqi.github.io/tech-blog/en/tools/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://navi-nanxiqi.github.io/tech-blog/tools/"/>
     </url>
 </urlset>
