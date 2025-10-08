@@ -1,11 +1,11 @@
 site_name: 技术博客
 site_description: 个人技术博客，分享编程经验和技术心得
 site_author: 博主
-site_url: https://yourdomain.com
+site_url: https://navi-nanxiqi.github.io/tech-blog/
 
 # Repository
 repo_name: tech-blog
-repo_url: https://github.com/yourusername/tech-blog
+repo_url: https://github.com/navi-nanxiqi/tech-blog
 
 # Theme
 theme:
