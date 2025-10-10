@@ -94,6 +94,7 @@ nav:
     - JavaScript: javascript/index.md
     - Docker: docker/index.md
     - 数据库: database/index.md
+    - nginx: nginx/index.md
   - 工具分享: tools/index.md
   - 关于: about.md
 
