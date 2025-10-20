@@ -6,16 +6,16 @@
 ## Latest Articles
 
 ### Python Related
-- [Python Basics Tutorial](python/index.md)
-- [Python Advanced Features](python/advanced.md)
+- [Python Basics Tutorial](pages/python/index.md)
+- [Python Advanced Features](pages/python/advanced.md)
 
 ### JavaScript Related
-- [JavaScript Getting Started Guide](javascript/index.md)
-- [Modern JavaScript Development](javascript/modern.md)
+- [JavaScript Getting Started Guide](pages/javascript/index.md)
+- [Modern JavaScript Development](pages/javascript/modern.md)
 
 ### Database Related
-- [SQL Fundamentals](database/index.md)
-- [Database Optimization Tips](database/optimization.md)
+- [SQL Fundamentals](pages/database/index.md)
+- [Database Optimization Tips](pages/database/optimization.md)
 
 ## Featured Functions
 

@@ -56,14 +56,6 @@ plugins:
         - locale: en
           name: English
           build: true
-          nav_translations:
-            首页: Home
-            技术文章: Technical Articles
-            Python: Python
-            JavaScript: JavaScript
-            数据库: Database
-            工具分享: Tools
-            关于: About
 
 # Extensions
 markdown_extensions:
@@ -90,21 +82,23 @@ markdown_extensions:
 nav:
   - 首页: index.md
   - 技术文章:
-    - Python: python/index.md
-    - JavaScript: javascript/index.md
-    - Docker: docker/index.md
-    - 数据库: database/index.md
-    - nginx: nginx/index.md
+    - Python: pages/python/index.md
+    - JavaScript: pages/javascript/index.md
+    - Docker: pages/docker/index.md
+    - 数据库: pages/database/index.md
+    - Nginx: pages/nginx/index.md
+    - FastApi: pages/fastapi/index.md
   - 工具分享: tools/index.md
   - 关于: about.md
 
 # Extra CSS
 extra_css:
-  - stylesheets/extra.css
+  - common/stylesheets/extra.css
 
 # Extra JavaScript
 extra_javascript:
   - https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js
+  - common/javascript/extra.js
 
 # Extra
 extra:
@@ -123,4 +117,4 @@ extra:
     provider: mike
 
 # Copyright
-copyright: Copyright &copy; 2024 技术博客 | Built with MkDocs Material
+copyright: Copyright &copy; 2025 technology-notes | Built with MkDocs Material
