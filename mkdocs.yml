@@ -1,6 +1,6 @@
-site_name: 技术博客
-site_description: 个人技术博客，分享编程经验和技术心得
-site_author: 博主
+site_name: "xxxx"
+site_description: "xxxx"
+site_author: "xxxx"
 site_url: https://navi-nanxiqi.github.io/tech-blog/
 
 # Repository
@@ -28,14 +28,14 @@ theme:
         name: 切换到浅色模式
   features:
     - navigation.tabs
-    - navigation.sections
-    - navigation.expand
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.footer
     - search.highlight
     - search.share
     - content.code.copy
     - content.code.annotate
+    - navigation.path
 
 # Plugins
 plugins:
@@ -61,9 +61,6 @@ plugins:
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -71,8 +68,11 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - admonition
-  - pymdownx.details
+  - admonition # 便利贴
+  - pymdownx.details # 块折叠
+  - pymdownx.inlinehilite # 块嵌套
+  - pymdownx.snippets
+  - pymdownx.superfences
   - attr_list
   - md_in_html
   - toc:
@@ -82,12 +82,19 @@ markdown_extensions:
 nav:
   - 首页: index.md
   - 技术文章:
-    - Python: pages/python/index.md
-    - JavaScript: pages/javascript/index.md
-    - Docker: pages/docker/index.md
-    - 数据库: pages/database/index.md
-    - Nginx: pages/nginx/index.md
-    - FastApi: pages/fastapi/index.md
+    - Python:
+      - pages/python/index.md
+      - pages/python/1test.md
+    - JavaScript:
+      - pages/javascript/index.md
+    - Docker:
+      - pages/docker/index.md
+    - 数据库:
+      - pages/database/index.md
+    - Nginx:
+      - pages/nginx/index.md
+    - FastApi:
+      - pages/fastapi/index.md
   - 工具分享: tools/index.md
   - 关于: about.md
 

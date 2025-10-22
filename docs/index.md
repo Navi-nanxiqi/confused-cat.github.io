@@ -7,15 +7,12 @@
 
 ### Python 相关
 - [Python 基础教程](pages/python/index.md)
-- [Python 高级特性](pages/python/advanced.md)
 
 ### JavaScript 相关
 - [JavaScript 入门指南](pages/javascript/index.md)
-- [现代 JavaScript 开发](pages/javascript/modern.md)
 
 ### 数据库相关
 - [SQL 基础知识](pages/database/index.md)
-- [数据库优化技巧](pages/database/optimization.md)
 
 ## 特色功能
 

@@ -7,15 +7,12 @@
 
 ### Python Related
 - [Python Basics Tutorial](pages/python/index.md)
-- [Python Advanced Features](pages/python/advanced.md)
 
 ### JavaScript Related
 - [JavaScript Getting Started Guide](pages/javascript/index.md)
-- [Modern JavaScript Development](pages/javascript/modern.md)
 
 ### Database Related
 - [SQL Fundamentals](pages/database/index.md)
-- [Database Optimization Tips](pages/database/optimization.md)
 
 ## Featured Functions
 
