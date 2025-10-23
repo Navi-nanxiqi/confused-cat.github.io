@@ -245,3 +245,76 @@ details>*:not(summary) {
 }
 
 /* 自定义折叠块块样式 */
+
+/* 布局左侧间距优化：让两个栏更靠近屏幕左边 */
+@media screen and (min-width: 76.25em) {
+  /* 调整栅格容器的水平外边距，使其靠左对齐 */
+  .md-grid {
+    margin-left: 16px !important;
+    margin-right: auto !important;
+  }
+  /* 进一步减少主侧边栏的内边距（防止左侧卡片过于右移） */
+  .md-sidebar--primary {
+    padding-left: 0 !important;
+  }
+}
+
+/* 桌面端三栏布局：左 20% | 中 60% | 右 20% */
+@media screen and (min-width: 76.25em) {
+  .md-main__inner.md-grid {
+    grid-template-columns: 20% 60% 20% !important;
+    column-gap: 1rem;
+  }
+  .md-grid {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .md-content {
+    max-width: none !important;
+  }
+  .md-sidebar--primary,
+  .md-sidebar--secondary {
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+/* 适度收窄内容最大宽度，避免过宽导致居中偏移明显 */
+@media screen and (min-width: 76.25em) {
+  .md-content {
+    max-width: 1100px;
+  }
+}
+
+/* 图片放大查看：覆盖样式 */
+.img-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+.img-zoom-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.img-zoom-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+html.img-zoom-open, body.img-zoom-open {
+  overflow: hidden;
+}
+
+/* 图片默认指针提示可放大 */
+.md-content img:not([data-no-zoom]) {
+  cursor: zoom-in;
+}
