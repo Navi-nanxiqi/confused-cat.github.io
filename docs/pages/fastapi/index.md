@@ -1,5 +1,12 @@
-<h5 id="HUZ53">fastAPI 学习</h5>
-<h6 id="HX86w">安装</h6>
+# fastAPI
+<!-- header -->
+!!! notes 前言
+    XXXX
+
+---
+
+## 安装
+
 1. 安装：`pip install fastapi`
 2. 阿里云镜像安装：`pip install fastapi -i https://mirrors.aliyun.com/pypi/simple`
 3. fastapi 启动依赖 uvicorn，安装 uvicorn：`pip install uvicorn -i https://mirrors.aliyun.com/pypi/simple`
@@ -8,7 +15,7 @@
 + 在安装 `fastapi` 的文件下新建`main.py`文件
 + 终端`uvicorn main:app --reload`命令开启 uvicorn 服务
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1728979149719-8b56b7fd-43fe-446a-9d14-8fd118a6e638.png)
+![](./static/1.png)
 
 重启命令之后的终端内容：
 
@@ -34,7 +41,7 @@ INFO:     127.0.0.1:49791 - "GET /favicon.ico HTTP/1.1" 404 Not Found
 + `app`：`FastAPI()=app`，即是实例化对象
 + `--reload`：代码改变重启服务器，只在开发阶段使用
 
-<h6 id="uDxHM">FastAPI 程序结构</h6>
+## 程序结构
 基础的 fastapi 程序需要五个步骤：
 
 ```python
@@ -55,12 +62,14 @@ async def root():
 # step5:运行开发服务器（终端进行）
 ```
 
-终端启动服务器运行的时候，也可以指定服务器地址和端口号：`uvicorn main:app --host 127.0.0.1 --port 8001 --reload`
+终端启动服务器运行的时候，也可以指定服务器地址和端口号：
+`uvicorn main:app --host 127.0.0.1 --port 8001 --reload`
 
 <h6 id="uZ7WY">路径操作装饰器中路径参数</h6>
+
 1. 声明路径参数
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1728980761566-dc4cb606-f7d8-4323-93b8-6f013037306c.png)
+![](./static/2.png)
 
 路径当中输入的 iterm 会作为路径操作函数的参数的值，进而被显示到浏览器上。
 
@@ -68,14 +77,14 @@ async def root():
 
 当路径操作函数声明参数类型为 int 时：
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1728981634541-9fbfee76-2ab0-4439-91ec-c1e850dbeb92.png)
+![](./static/3.png)
 
 当路径操作函数声明参数类型为 str 时：浏览器数据就会正常显示。
 
 实际上，挡在路径操作函数里面定义了参数类型，当访问链接的时候的数据不正确时，fastapi 会进行是数据校验。
 
-+ <font style="color:rgba(0, 0, 0, 0.75);">所有的数据验证都是由</font><font style="color:rgba(0, 0, 0, 0.75);"> </font>`<font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);">Pydantic</font>`<font style="color:rgba(0, 0, 0, 0.75);">实现的.</font>
-+ <font style="color:rgba(0, 0, 0, 0.75);">你可以用同样的类型声明比如 </font>`<font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);">str</font>`<font style="color:rgba(0, 0, 0, 0.75);">, </font>`<font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);">float</font>`<font style="color:rgba(0, 0, 0, 0.75);">, </font>`<font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);">bool</font>`<font style="color:rgba(0, 0, 0, 0.75);"> 或者其他更复杂的类型.</font>
++ 所有的数据验证都是由Pydantic实现的
++ 你可以用同样的类型声明比如str、float、bool或者其他更复杂的类型
 3. 限定路径参数有效值
 
 ```python
@@ -96,15 +105,15 @@ def root(po:my_class_name):
 
 设定参数的类型是一个 class 对象，在访问的时候，只有当 po 是限定类型中的数据时才会进行正常显示。
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983116211-cceadf53-067b-4c30-ae98-20e9946f1740.png)
+![](./static/4.png)
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983140553-916fe012-0673-4e03-891f-db7fabdcf1d0.png)
+![](./static/5.png)
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983160169-64ae75aa-e0f2-499e-baa5-4815569cc730.png)
+![](./static/6.png)
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983212546-00dcd7c7-9ea7-427f-a062-a04c5417a38b.png)
+![](./static/7.png)
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983237729-52ca7229-7ce7-488d-bd0f-625165f19380.png)
+![](./static/8.png)
 
 4. 路径参数的值是路径类型的变量
 
@@ -129,13 +138,13 @@ def add(num1:int=2,num2:int=8):
     return {"num1+num2=",num1+num2}
 ```
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1729042132084-549ca687-3ade-4cfc-b8c3-608df6195394.png)
+![](./static/9.png)
 
 当在浏览器输入 `http://127.0.0.1:8000/files/?num1=10&num2=20`进行访问，都会将两数之和给返回到浏览器页面。
 
 当浏览器访问不带上查询参数时，那么就是默认值的情况，`http://127.0.0.1:8000/files/`
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1729042390106-aa2cb512-d36d-4a95-bb28-6552d07320b3.png)
+![](./static/10.png)
 
 因为 query 参数类不是 path 中固定的一部分，故而它们是可选的，且可以有默认值。
 
@@ -143,7 +152,7 @@ def add(num1:int=2,num2:int=8):
 
 声明可选的 query 参数，将查询参数的 默认值设置为`None`。
 
-![](https://cdn.nlark.com/yuque/0/2024/png/42888969/1729042849166-0c79b5a5-720b-4033-9926-4015286b06f4.png)
+![](./static/11.png)
 
 <h6 id="idkv4">请求体</h6>
 1. 请求体
@@ -198,9 +207,9 @@ async def creste_iterm(iterm:Iterm):
 
 声明的参数是自己创建的模型 `Iterm`，使用 postman 访问链接并发送请求体过去，将内容进行输出。
 
-![定义模型无默认值](https://cdn.nlark.com/yuque/0/2024/png/42888969/1729045245315-b308feb7-f14e-4ca7-8201-c81f43c3a6b1.png)
+![定义模型无默认值](./static/12.png)
 
-![定义模型有默认值](https://cdn.nlark.com/yuque/0/2024/png/42888969/1729045204433-a35cf6f5-59ae-41e6-9ee3-b81f5d56909d.png)
+![定义模型有默认值](./static/13.png)
 
 <h6 id="pXq3U">给查询参数设置验证条件，用于字符串的验证</h6>
 1. 给查询参数添加验证
