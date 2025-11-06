@@ -11,18 +11,14 @@
       });
     });
   }
-  // 2. 高亮块转换
+
+  // 2. 将 ::: 块转换为 Material 的提示块（admonition）
   function transformColonBlocks(root) {
     var paras = Array.from(root.querySelectorAll('p'));
-    var starts = paras.filter(function (p) {
-      var t = (p.textContent || '').trim().toLowerCase();
-      return t.startsWith(':::');
-    });
 
-    starts.forEach(function (start) {
-      var marker = (start.textContent || '').trim().toLowerCase();
-      var rawType = marker.slice(3).trim(); // ":::type" 或 "::: type"
-
+    paras.forEach(function (start) {
+      var startText = (start.textContent || '').trim();
+      var lowerStart = startText.toLowerCase();
       // 兼容两行写法：第一行仅为 ":::", 第二行是类型
       var node = start.nextSibling;
       if (!rawType) {
@@ -35,8 +31,10 @@
           if (nextIsTypeP) node && node.previousSibling && node.previousSibling.remove();
         }
       }
-      if (!rawType) return;
 
+      if (!type) return; // 未识别为有效块，直接跳过
+
+      // 允许更多类型映射
       var map = {
         tips: { cls: 'tip', title: 'Tips' },
         tip: { cls: 'tip', title: 'Tip' },
@@ -47,15 +45,17 @@
         success: { cls: 'success', title: 'Success' },
         note: { cls: 'note', title: 'Note' }
       };
-      var meta = map[rawType] || { cls: 'note', title: rawType.charAt(0).toUpperCase() + rawType.slice(1) };
+      var meta = map[type] || { cls: 'note', title: type.charAt(0).toUpperCase() + type.slice(1) };
 
+      // 收集内容节点，直到遇到结束行（至少三个冒号）
       var contentNodes = [];
       var closing = null;
+      var node = cursor;
       while (node) {
         if (node.nodeType === Node.ELEMENT_NODE) {
           var isP = node.tagName && node.tagName.toLowerCase() === 'p';
           var text = isP ? (node.textContent || '').trim().toLowerCase() : '';
-          if (isP && text === ':::') {
+          if (isP && /^:{3,}$/.test(text)) {
             closing = node;
             break;
           }
@@ -64,16 +64,28 @@
         node = node.nextSibling;
       }
 
+      // 安全措施：若未找到结束标记，不执行转换，避免包裹到后续标题
+      if (!closing) return;
+
+      // 构造提示块容器
       var wrap = document.createElement('div');
       wrap.className = 'admonition ' + meta.cls;
       var title = document.createElement('p');
       title.className = 'admonition-title';
-      title.textContent = meta.title;
+      title.textContent = meta.title; // 标题仅使用类型名
       wrap.appendChild(title);
+
+      // 将收集的内容节点迁移到容器中
       contentNodes.forEach(function (n) { wrap.appendChild(n); });
 
+      // 两行写法时移除类型行
+      if (typeLineToRemove && typeLineToRemove.parentNode) {
+        typeLineToRemove.remove();
+      }
+
+      // 用容器替换起始行，并删除结束标记
       start.parentNode.replaceChild(wrap, start);
-      if (closing) closing.remove();
+      if (closing && closing.parentNode) closing.remove();
     });
   }
 

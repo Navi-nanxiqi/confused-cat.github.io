@@ -2,7 +2,6 @@
 <!-- header -->
 !!! notes 前言
     XXXX
-
 ---
 ## 1 什么是docker&docker的历史背景
 
