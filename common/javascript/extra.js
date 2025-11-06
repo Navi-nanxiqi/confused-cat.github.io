@@ -19,57 +19,16 @@
     paras.forEach(function (start) {
       var startText = (start.textContent || '').trim();
       var lowerStart = startText.toLowerCase();
-
-      // 先处理单行内联写法：:::info XXX :::
-      var inlineMatch = lowerStart.match(/^:{3,}\s*([a-z-]+)\s+(.+?)\s*:{3,}$/);
-      if (inlineMatch) {
-        var inlineType = inlineMatch[1];
-        var inlineContent = startText.replace(/^:{3,}\s*[a-z-]+\s+/i, '').replace(/\s*:{3,}\s*$/i, '');
-        var mapInline = {
-          tips: { cls: 'tip', title: 'Tips' },
-          tip: { cls: 'tip', title: 'Tip' },
-          info: { cls: 'info', title: 'Info' },
-          warning: { cls: 'warning', title: 'Warning' },
-          danger: { cls: 'danger', title: 'Danger' },
-          error: { cls: 'danger', title: 'Danger' },
-          success: { cls: 'success', title: 'Success' },
-          note: { cls: 'note', title: 'Note' }
-        };
-        var metaInline = mapInline[inlineType] || { cls: 'note', title: inlineType.charAt(0).toUpperCase() + inlineType.slice(1) };
-
-        var wrapInline = document.createElement('div');
-        wrapInline.className = 'admonition ' + metaInline.cls;
-        var titleInline = document.createElement('p');
-        titleInline.className = 'admonition-title';
-        titleInline.textContent = metaInline.title;
-        wrapInline.appendChild(titleInline);
-        var bodyInline = document.createElement('p');
-        bodyInline.textContent = inlineContent;
-        wrapInline.appendChild(bodyInline);
-        start.parentNode.replaceChild(wrapInline, start);
-        return; // 已处理内联写法
-      }
-
-      // 识别起始行：支持 ":::type"、"::: type"，以及两行写法（第一行仅为 ":::"，下一行是类型）
-      var type = null;
-      var cursor = start.nextSibling; // 从起始行之后的节点开始收集内容
-      var typeLineToRemove = null;    // 两行写法时需要删除的类型行
-
-      // 单行写法（至少三个冒号）
-      var m1 = lowerStart.match(/^:{3,}\s*([a-z-]+)$/);
-      if (m1) {
-        type = m1[1];
-      } else if (/^:{3,}$/.test(lowerStart)) {
-        // 两行写法：第一行仅为 ":::"，下一行是类型
-        // 跳过文本节点直到找到段落
-        while (cursor && !(cursor.nodeType === Node.ELEMENT_NODE && cursor.tagName.toLowerCase() === 'p')) {
-          cursor = cursor.nextSibling;
-        }
-        var nextText = cursor ? (cursor.textContent || '').trim().toLowerCase() : '';
-        if (nextText && /^[a-z-]+$/.test(nextText)) {
-          type = nextText;
-          typeLineToRemove = cursor; // 记录类型行，稍后移除
-          cursor = cursor.nextSibling; // 内容从类型行之后开始
+      // 兼容两行写法：第一行仅为 ":::", 第二行是类型
+      var node = start.nextSibling;
+      if (!rawType) {
+        var nextIsTypeP = node && node.nodeType === Node.ELEMENT_NODE && node.tagName.toLowerCase() === 'p';
+        var nextText = nextIsTypeP ? (node.textContent || '').trim().toLowerCase() : '';
+        if (nextText) {
+          rawType = nextText;
+          node = node.nextSibling; // 跳过类型行，内容从其后开始
+          // 删除类型占位行
+          if (nextIsTypeP) node && node.previousSibling && node.previousSibling.remove();
         }
       }
 
@@ -130,51 +89,55 @@
     });
   }
 
-  // 3. 图片点击放大查看
-  var zoomOverlay = null;
-  function ensureZoomOverlay() {
-    if (zoomOverlay) return zoomOverlay;
-    zoomOverlay = document.createElement('div');
-    zoomOverlay.className = 'img-zoom-overlay';
-    var img = document.createElement('img');
-    img.className = 'img-zoom-image';
-    zoomOverlay.appendChild(img);
-    zoomOverlay.addEventListener('click', function () { hideZoom(); });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') hideZoom();
-    });
-    document.body.appendChild(zoomOverlay);
-    return zoomOverlay;
-  }
-  function showZoom(src) {
-    var ov = ensureZoomOverlay();
-    var inner = ov.querySelector('img');
-    inner.src = src;
-    ov.classList.add('open');
-    document.documentElement.classList.add('img-zoom-open');
-    document.body.classList.add('img-zoom-open');
-  }
-  function hideZoom() {
-    if (!zoomOverlay) return;
-    zoomOverlay.classList.remove('open');
-    document.documentElement.classList.remove('img-zoom-open');
-    document.body.classList.remove('img-zoom-open');
-  }
-  function setupImageZoom(root) {
-    var imgs = Array.from(root.querySelectorAll('.md-content img:not([data-no-zoom])'));
+  // 3. 图片增强：居中显示 + 点击放大查看
+  function enhanceImages(root) {
+    var scope = root || document;
+    // 选择正文中的图片；避免重复绑定
+    var imgs = Array.from(scope.querySelectorAll('.md-content img:not([data-zoom-bound])'));
     imgs.forEach(function (img) {
-      if (img.dataset.zoomBound) return;
-      img.dataset.zoomBound = '1';
-      img.addEventListener('click', function (e) {
-        // 如果图片在链接中，阻止默认跳转行为
-        var a = img.closest('a');
-        if (a) e.preventDefault();
-        showZoom(img.currentSrc || img.src);
-      });
+      img.setAttribute('data-zoom-bound', '1');
+      // 设置光标提示可放大
+      try { img.style.cursor = 'zoom-in'; } catch (e) {}
+
+      var anchor = img.closest('a');
+      var target = anchor || img;
+      // 若图片在链接内，覆盖默认跳转为放大预览
+      target.addEventListener('click', function (ev) {
+        if (ev) { ev.preventDefault && ev.preventDefault(); ev.stopPropagation && ev.stopPropagation(); }
+        // 创建遮罩
+        var overlay = document.createElement('div');
+        overlay.className = 'image-zoom-overlay';
+        var wrapper = document.createElement('div');
+        wrapper.className = 'image-zoom-wrapper';
+        var big = document.createElement('img');
+        big.className = 'image-zoom-img';
+        big.src = img.src;
+        big.alt = img.alt || '';
+        wrapper.appendChild(big);
+        overlay.appendChild(wrapper);
+        document.body.appendChild(overlay);
+
+        function close() {
+          try {
+            overlay.classList.remove('show');
+            // 动画结束后移除（此处简单处理，直接移除）
+            document.body.removeChild(overlay);
+            document.removeEventListener('keydown', onKey);
+          } catch (e) {}
+        }
+        function onKey(e) { if (e && e.key === 'Escape') close(); }
+        overlay.addEventListener('click', function (e) {
+          // 点击遮罩或图片都关闭
+          if (e.target === overlay || e.target === big || e.target === wrapper) close();
+        });
+        document.addEventListener('keydown', onKey);
+        // 展示
+        requestAnimationFrame(function () { overlay.classList.add('show'); });
+      }, { passive: false });
     });
   }
 
-  function runAll(root) { transformColonBlocks(root); stripDetailsAttrs(root); setupImageZoom(root); }
+  function runAll(root) { transformColonBlocks(root); stripDetailsAttrs(root); enhanceImages(root); }
 
   function setupObserver() {
     var debounced = (function () { var t; return function () { clearTimeout(t); t = setTimeout(function () { runAll(document); }, 100); }; })();

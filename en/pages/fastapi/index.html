@@ -22,11 +22,11 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>Index - Technology Blog</title>
+        <title>fastAPI - Technology Blog</title>
       
     
     
@@ -89,6 +89,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#fastapi" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -125,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              fastAPI
             
           </span>
         </div>
@@ -904,18 +909,70 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    fastAPI
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Index
+    fastAPI
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序结构
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -998,6 +1055,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序结构
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1016,10 +1101,14 @@
   
 
 
-  <h1>Index</h1>
-
-<h5 id="HUZ53">fastAPI 学习</h5>
-<h6 id="HX86w">安装</h6>
+<h1 id="fastapi">fastAPI<a class="headerlink" href="#fastapi" title="Permanent link">&para;</a></h1>
+<!-- header -->
+<div class="admonition notes 前言">
+<p class="admonition-title">Notes</p>
+<p>XXXX</p>
+</div>
+<hr />
+<h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>安装：<code>pip install fastapi</code></li>
 <li>阿里云镜像安装：<code>pip install fastapi -i https://mirrors.aliyun.com/pypi/simple</code></li>
@@ -1030,7 +1119,7 @@
 <li>在安装 <code>fastapi</code> 的文件下新建<code>main.py</code>文件</li>
 <li>终端<code>uvicorn main:app --reload</code>命令开启 uvicorn 服务</li>
 </ul>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1728979149719-8b56b7fd-43fe-446a-9d14-8fd118a6e638.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/1.png" /></p>
 <p>重启命令之后的终端内容：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PS<span class="w"> </span>D:<span class="se">\M</span>yFile<span class="se">\A</span>llCode<span class="se">\N</span>odeCode<span class="se">\7</span>sevenwenk<span class="se">\r</span>estfullapi&gt;<span class="w"> </span>uvicorn<span class="w"> </span>main:app<span class="w"> </span>--reload
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>INFO:<span class="w">     </span>Will<span class="w"> </span>watch<span class="w"> </span><span class="k">for</span><span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>these<span class="w"> </span>directories:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;D:\\MyFile\\AllCode\\NodeCode\\7sevenwenk\\restfullapi&#39;</span><span class="o">]</span>
@@ -1050,7 +1139,7 @@
 <li><code>app</code>：<code>FastAPI()=app</code>，即是实例化对象</li>
 <li><code>--reload</code>：代码改变重启服务器，只在开发阶段使用</li>
 </ul>
-<h6 id="uDxHM">FastAPI 程序结构</h6>
+<h2 id="_2">程序结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>基础的 fastapi 程序需要五个步骤：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># step1:导入FastAPI</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
@@ -1068,23 +1157,25 @@
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span><span class="s1">&#39;hello world&#39;</span><span class="p">}</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1"># step5:运行开发服务器（终端进行）</span>
 </code></pre></div>
-<p>终端启动服务器运行的时候，也可以指定服务器地址和端口号：<code>uvicorn main:app --host 127.0.0.1 --port 8001 --reload</code></p>
+<p>终端启动服务器运行的时候，也可以指定服务器地址和端口号：
+<code>uvicorn main:app --host 127.0.0.1 --port 8001 --reload</code></p>
 <h6 id="uZ7WY">路径操作装饰器中路径参数</h6>
+
 <ol>
 <li>声明路径参数</li>
 </ol>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1728980761566-dc4cb606-f7d8-4323-93b8-6f013037306c.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/2.png" /></p>
 <p>路径当中输入的 iterm 会作为路径操作函数的参数的值，进而被显示到浏览器上。</p>
 <ol>
 <li>声明路径参数的类型</li>
 </ol>
 <p>当路径操作函数声明参数类型为 int 时：</p>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1728981634541-9fbfee76-2ab0-4439-91ec-c1e850dbeb92.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/3.png" /></p>
 <p>当路径操作函数声明参数类型为 str 时：浏览器数据就会正常显示。</p>
 <p>实际上，挡在路径操作函数里面定义了参数类型，当访问链接的时候的数据不正确时，fastapi 会进行是数据校验。</p>
 <ul>
-<li><font style="color:rgba(0, 0, 0, 0.75);">所有的数据验证都是由</font><font style="color:rgba(0, 0, 0, 0.75);"> </font><code>&lt;font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);"&gt;Pydantic&lt;/font&gt;</code><font style="color:rgba(0, 0, 0, 0.75);">实现的.</font></li>
-<li><font style="color:rgba(0, 0, 0, 0.75);">你可以用同样的类型声明比如 </font><code>&lt;font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);"&gt;str&lt;/font&gt;</code><font style="color:rgba(0, 0, 0, 0.75);">, </font><code>&lt;font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);"&gt;float&lt;/font&gt;</code><font style="color:rgba(0, 0, 0, 0.75);">, </font><code>&lt;font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);"&gt;bool&lt;/font&gt;</code><font style="color:rgba(0, 0, 0, 0.75);"> 或者其他更复杂的类型.</font></li>
+<li>所有的数据验证都是由Pydantic实现的</li>
+<li>你可以用同样的类型声明比如str、float、bool或者其他更复杂的类型</li>
 <li>限定路径参数有效值</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
@@ -1102,11 +1193,11 @@
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;status&#39;</span><span class="p">:</span><span class="n">po</span><span class="p">}</span>
 </code></pre></div>
 <p>设定参数的类型是一个 class 对象，在访问的时候，只有当 po 是限定类型中的数据时才会进行正常显示。</p>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983116211-cceadf53-067b-4c30-ae98-20e9946f1740.png" /></p>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983140553-916fe012-0673-4e03-891f-db7fabdcf1d0.png" /></p>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983160169-64ae75aa-e0f2-499e-baa5-4815569cc730.png" /></p>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983212546-00dcd7c7-9ea7-427f-a062-a04c5417a38b.png" /></p>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1728983237729-52ca7229-7ce7-488d-bd0f-625165f19380.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/4.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/5.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/6.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/7.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/8.png" /></p>
 <ol>
 <li>路径参数的值是路径类型的变量</li>
 </ol>
@@ -1127,16 +1218,16 @@
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">num2</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;num1+num2=&quot;</span><span class="p">,</span><span class="n">num1</span><span class="o">+</span><span class="n">num2</span><span class="p">}</span>
 </code></pre></div>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1729042132084-549ca687-3ade-4cfc-b8c3-608df6195394.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/9.png" /></p>
 <p>当在浏览器输入 <code>http://127.0.0.1:8000/files/?num1=10&amp;num2=20</code>进行访问，都会将两数之和给返回到浏览器页面。</p>
 <p>当浏览器访问不带上查询参数时，那么就是默认值的情况，<code>http://127.0.0.1:8000/files/</code></p>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1729042390106-aa2cb512-d36d-4a95-bb28-6552d07320b3.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/10.png" /></p>
 <p>因为 query 参数类不是 path 中固定的一部分，故而它们是可选的，且可以有默认值。</p>
 <ol>
 <li>设置可选的查询参数</li>
 </ol>
 <p>声明可选的 query 参数，将查询参数的 默认值设置为<code>None</code>。</p>
-<p><img alt="" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1729042849166-0c79b5a5-720b-4033-9926-4015286b06f4.png" /></p>
+<p><img alt="" src="../../../pages/fastapi/static/11.png" /></p>
 <h6 id="idkv4">请求体</h6>
 <ol>
 <li>请求体</li>
@@ -1185,8 +1276,8 @@
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="k">return</span> <span class="n">iterm</span>
 </code></pre></div>
 <p>声明的参数是自己创建的模型 <code>Iterm</code>，使用 postman 访问链接并发送请求体过去，将内容进行输出。</p>
-<p><img alt="定义模型无默认值" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1729045245315-b308feb7-f14e-4ca7-8201-c81f43c3a6b1.png" /></p>
-<p><img alt="定义模型有默认值" src="https://cdn.nlark.com/yuque/0/2024/png/42888969/1729045204433-a35cf6f5-59ae-41e6-9ee3-b81f5d56909d.png" /></p>
+<p><img alt="定义模型无默认值" src="../../../pages/fastapi/static/12.png" /></p>
+<p><img alt="定义模型有默认值" src="../../../pages/fastapi/static/13.png" /></p>
 <h6 id="pXq3U">给查询参数设置验证条件，用于字符串的验证</h6>
 <ol>
 <li>给查询参数添加验证</li>
